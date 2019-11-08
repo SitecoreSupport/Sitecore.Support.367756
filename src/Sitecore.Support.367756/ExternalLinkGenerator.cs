@@ -28,8 +28,7 @@
             if (!string.IsNullOrWhiteSpace(siteInfo.TargetHostName))
             {
                 Uri uri = new Uri(itemUrl);
-                string itemPathElement = GetItemPathElement(item, siteInfo);
-                return string.Format(CultureInfo.InvariantCulture, "{0}://{1}{2}", uri.Scheme, siteInfo.TargetHostName, itemPathElement);
+                return string.Format(CultureInfo.InvariantCulture, "{0}://{1}{2}", uri.Scheme, siteInfo.TargetHostName, uri.PathAndQuery);
             }
             return itemUrl;
         }
